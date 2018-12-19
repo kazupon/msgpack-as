@@ -1,0 +1,14 @@
+{
+  "defaultSeverity": "error",
+  "extends": "./node_modules/assemblyscript/lib/lint/",
+  "jsRules": {
+    "semicolon": [true, "never"]
+  },
+  "rules": {
+    "no-unsafe-any": false,
+    "no-default-export": false,
+    "restrict-plus-operands": false,
+    "semicolon": [true, "never"]
+  },
+  "rulesDirectory": []
+}

@@ -1,0 +1,69 @@
+{
+  "name": "msgpack-wasm-as",
+  "description": "MessagePack implementation for WebAssembly with AssemblyScript",
+  "version": "0.0.1",
+  "author": {
+    "name": "kazuya kawaguchi",
+    "email": "kawakazu80@gmail.com"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "bugs": {
+    "url": "https://github.com/kazupon/msgpack-wasm-as/issues"
+  },
+  "devDependencies": {
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.15",
+    "assemblyscript": "git+https://github.com/AssemblyScript/assemblyscript.git#d5f72e32d7e99cec3f8c37e6bb2916864706f4f0",
+    "espower-typescript": "^9.0.1",
+    "mocha": "^5.2.0",
+    "nyc": "^13.1.0",
+    "power-assert": "^1.6.1",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.12.0",
+    "typescript": "^3.2.2"
+  },
+  "keywords": [
+    "AssemblyScript",
+    "MessagePack",
+    "WebAssembly",
+    "msgpack",
+    "wasm"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kazupon/msgpack-wasm-as.git"
+  },
+  "scripts": {
+    "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
+    "lint": "tslint --fix -c tslint.json --project ./tsconfig.json --exclude tests/**/*.ts --formatters-dir ./node_modules/assemblyscript/lib/lint/formatters --format as",
+    "start": "ts-node ./index.ts",
+    "test": "npm run asbuild && mocha --require espower-typescript/guess tests/**/*.ts",
+    "test:watch": "npm run asbuild && asbuild && mocha --watch-extensions ts -w --require espower-typescript/guess tests/**/*.ts",
+    "test:coverage": "npm run asbuild && nyc mocha tests/**/*.ts"
+  },
+  "nyc": {
+    "include": [
+      "index.ts",
+      "assembly/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "espower-typescript/guess"
+    ],
+    "reporter": [
+      "text",
+      "text-summary",
+      "html"
+    ],
+    "sourceMap": true
+  }
+}

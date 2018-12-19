@@ -1,0 +1,10 @@
+Thumbs.db
+.idea
+.vscode/
+.nyc_output/
+coverage/
+node_modules/
+.DS_Store
+*.log
+*.swp
+*~
