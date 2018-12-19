@@ -40,7 +40,7 @@
   },
   "scripts": {
     "asbuild": "npm run asbuild:untouched && npm run asbuild:optimized",
-    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat --sourceMap --validate --optimize",
+    "asbuild:optimized": "asc assembly/index.ts -b build/optimized.wasm -t build/optimized.wat -d ./types/index.d.ts --sourceMap --validate --optimize",
     "asbuild:untouched": "asc assembly/index.ts -b build/untouched.wasm -t build/untouched.wat --sourceMap --validate --debug",
     "lint": "tslint --fix -c tslint.json --project ./tsconfig.json --exclude tests/**/*.ts --formatters-dir ./node_modules/assemblyscript/lib/lint/formatters --format as",
     "start": "ts-node ./index.ts",
@@ -50,7 +50,6 @@
   },
   "nyc": {
     "include": [
-      "index.ts",
       "assembly/**/*.ts"
     ],
     "extension": [
