@@ -1,6 +1,6 @@
 # msgpack-wasm-as
 
-MessagePack implementation for WebAssembly with AssemblyScript
+MessagePack implementation with AssemblyScript for WebAssembly
 
 > :warning: This project is experimental, please don't use production project!!
 

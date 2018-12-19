@@ -1,6 +1,6 @@
 {
   "name": "msgpack-wasm-as",
-  "description": "MessagePack implementation for WebAssembly with AssemblyScript",
+  "description": "MessagePack implementation with AssemblyScript for WebAssembly"
   "version": "0.0.1",
   "author": {
     "name": "kazuya kawaguchi",
