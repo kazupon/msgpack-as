@@ -8,7 +8,7 @@ export class SimpleBuffer {
   }
 
   append (data: u8[]): void {
-    let size = this.current
+    var size: i32 = this.current
     // TODO: implement
     // this.buffer ...
 
