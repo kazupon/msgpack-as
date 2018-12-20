@@ -9,20 +9,5 @@ declare module ASModule {
   type f64 = number;
   type bool = any;
   function add(a: i32, b: i32): i32;
-  class Unpacker {
-    constructor();
-    unpack(buffer: u32): void;
-    dispose(): void;
-  }
-  class Zone {
-    constructor();
-    dispose(): void;
-  }
-  class SimpleBuffer {
-    constructor();
-    append(data: u32): void;
-    grow(): bool;
-    dispose(): void;
-  }
 }
 export default ASModule;

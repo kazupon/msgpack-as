@@ -4,6 +4,8 @@ Thumbs.db
 .nyc_output/
 coverage/
 node_modules/
+build/debug
+build/tests
 .DS_Store
 *.log
 *.swp

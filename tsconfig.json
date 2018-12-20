@@ -10,7 +10,7 @@
     "baseUrl": "./",
     "paths": {},
     "typeRoots": ["types", "node_modules/@types", "node_modules"],
-    "types": ["node", "mocha", "webassembly"],
+    "types": ["node", "ava", "webassembly"],
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
