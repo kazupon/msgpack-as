@@ -1,5 +1,6 @@
 import 'allocator/arena'
 
+import { Format } from '../../assembly/Format'
 import { SBuffer } from '../../assembly/SBuffer'
 import { Packer } from '../../assembly/Packer'
 
@@ -12,7 +13,7 @@ export class PackerTests {
     packer.packTrue()
     let packed = packer.pack()
 
-    let expected: u8[] = [0xc2, 0xc0, 0xc3]
+    let expected: u8[] = [<u8>Format.FALSE, <u8>Format.NIL, <u8>Format.TRUE]
     if (expected.length != packed.length) {
       return false
     }

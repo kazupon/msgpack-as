@@ -1,3 +1,4 @@
+import { Format } from './Format'
 import { Buffer } from './Buffer'
 
 export class Packer<T extends Buffer> {
@@ -8,15 +9,15 @@ export class Packer<T extends Buffer> {
   }
 
   packNil (): void {
-    this.appendBuffer([0xc0])
+    this.appendBuffer([<u8>Format.NIL])
   }
 
   packTrue (): void {
-    this.appendBuffer([0xc3])
+    this.appendBuffer([<u8>Format.TRUE])
   }
 
   packFalse (): void {
-    this.appendBuffer([0xc2])
+    this.appendBuffer([<u8>Format.FALSE])
   }
 
   packI8 (value: i8): void {
