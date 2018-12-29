@@ -1,4 +1,4 @@
-# msgpack-wasm-as
+# msgpack-as
 
 MessagePack implementation with AssemblyScript for WebAssembly
 

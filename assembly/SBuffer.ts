@@ -62,7 +62,9 @@ export class SBuffer extends Buffer {
   }
 
   // NOTICE: GC experimental !
+  /*
   private __gc(): void {
     __gc_mark(changetype<usize>(this.buf))
   }
+  */
 }
