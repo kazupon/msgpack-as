@@ -1,6 +1,6 @@
-import { SimpleBuffer } from './SimpleBuffer'
+import { Buffer } from './Buffer'
 
-export class Packer<T extends SimpleBuffer> {
+export class Packer<T extends Buffer> {
   private buffer: T
 
   constructor (buffer: T) {
@@ -8,15 +8,15 @@ export class Packer<T extends SimpleBuffer> {
   }
 
   packNil (): void {
-    this.buffer.append([<u8>0xc0])
+    this.appendBuffer([0xc0])
   }
 
   packTrue (): void {
-    // TODO:
+    this.appendBuffer([0xc3])
   }
 
   packFalse (): void {
-    // TODO:
+    this.appendBuffer([0xc2])
   }
 
   packI8 (value: i8): void {
@@ -53,12 +53,16 @@ export class Packer<T extends SimpleBuffer> {
 
   // and other ...
 
-  pack (): Uint8Array | null {
-    // TODO:
-    return null
+  pack (): Uint8Array {
+    return this.buffer.data
   }
 
   dispose (): void {
     // TODO:
   }
+
+  private appendBuffer (data: u8[]): void {
+    this.buffer.write(data)
+  }
+
 }

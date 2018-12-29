@@ -1,4 +1,6 @@
-export class Unpacker {
+import { Buffer } from './Buffer'
+
+export class Unpacker<T extends Buffer> {
 
   constructor () {
     // TODO:
