@@ -1,15 +1,20 @@
-# msgpack-as
+# msgpack-as (WIP)
 
 MessagePack implementation with AssemblyScript for WebAssembly
 
 > :warning: This project is experimental, please don't use production project!!
 
 ## TODO:
-- [ ] zone implementation
-- [ ] packer implementation
-- [ ] unpacker implementation
-- [ ] tweak wasm binary building for unit test
-- [ ] detect unit test code automatically
+- [ ] implementation
+  - [ ] zone
+  - [ ] object
+  - [ ] parser
+  - [ ] unpacker
+  - [-] packer
+  - [ ] JS side utils
+- [ ] tests
+  - [ ] tweak wasm binary building for unit test
+  - [ ] detect unit test code automatically
 
 ## :copyright: License
 
