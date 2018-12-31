@@ -10,11 +10,14 @@ MessagePack implementation with AssemblyScript for WebAssembly
   - [ ] object
   - [ ] parser
   - [ ] unpacker
-  - [-] packer
+  - [ ] packer
   - [ ] JS side utils
 - [ ] tests
   - [ ] tweak wasm binary building for unit test
   - [ ] detect unit test code automatically
+- [ ] other
+  - [ ] benchmark
+  - [ ] examples (browser and node)
 
 ## :copyright: License
 
