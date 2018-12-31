@@ -54,6 +54,7 @@
     "build:test:packer": "asc tests/assembly/Packer.spec.as.ts -b build/tests/Packer.wasm -t build/tests/Packer.wat --sourceMap --validate --debug",
     "build:test:buffer": "asc tests/assembly/Buffer.spec.as.ts -b build/tests/Buffer.wasm -t build/tests/Buffer.wat --sourceMap --validate --debug",
     "build:test:chunklist": "asc tests/assembly/ChunkList.spec.as.ts -b build/tests/ChunkList.wasm -t build/tests/ChunkList.wat --sourceMap --validate --debug",
+    "build:test:finalizer": "asc tests/assembly/Finalizer.spec.as.ts -b build/tests/Finalizer.wasm -t build/tests/Finalizer.wat --sourceMap --validate --debug",
     "build:test": "npm run build:test:index && npm run build:test:packer && npm run build:test:buffer",
     "build": "npm run build:wasm",
     "lint": "tslint --fix -c tslint.json --project ./tsconfig.json --exclude tests/**/*.ts --formatters-dir ./node_modules/assemblyscript/lib/lint/formatters --format as",
@@ -61,6 +62,7 @@
     "clean:build": "rm -rf build",
     "clean": "npm run clean:build",
     "test": "npm run build:test && ava --verbose",
-    "test:chunklist": "npm run build:test:chunklist && ava tests/ChunkList.spec.ts --verbose"
+    "test:chunklist": "npm run build:test:chunklist && ava tests/ChunkList.spec.ts --verbose",
+    "test:finalizer": "npm run build:test:finalizer && ava tests/Finalizer.spec.ts --verbose"
   }
 }
