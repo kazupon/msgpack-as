@@ -51,6 +51,7 @@
     "build:release": "asc assembly/index.ts -b build/release/msgpack-as.wasm -t build/debug/msgpack-as.wat -d ./types/index.d.ts --sourceMap --validate --optimize",
     "build:wasm": "npm run build:debug && npm run build:release",
     "build:test:index": "asc tests/assembly/index.spec.as.ts -b build/tests/index.wasm -t build/tests/index.wat --sourceMap --validate --debug",
+    "build:test:object": "asc tests/assembly/Object.spec.as.ts -b build/tests/Object.wasm -t build/tests/Object.wat --sourceMap --validate --debug",
     "build:test:packer": "asc tests/assembly/Packer.spec.as.ts -b build/tests/Packer.wasm -t build/tests/Packer.wat --sourceMap --validate --debug",
     "build:test:buffer": "asc tests/assembly/Buffer.spec.as.ts -b build/tests/Buffer.wasm -t build/tests/Buffer.wat --sourceMap --validate --debug",
     "build:test:chunklist": "asc tests/assembly/ChunkList.spec.as.ts -b build/tests/ChunkList.wasm -t build/tests/ChunkList.wat --sourceMap --validate --debug",
