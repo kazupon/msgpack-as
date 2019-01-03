@@ -1,6 +1,6 @@
 export class Finalizer<T> {
-  handler: (data :T) => void
-  data: T
+  private handler: (data :T) => void
+  private data: T
 
   constructor (handler: (data: T) => void, data: T) {
     this.handler = handler
